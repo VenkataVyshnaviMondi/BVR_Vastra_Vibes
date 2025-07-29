@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BVR Vastra Vibes - Premium Sarees</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #0a3d62;
+            --secondary: #1e5b8f;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #0c2461;
+            --gray: #7f8c8d;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --info: #3498db;
+        }
+
+        body {
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 15px 5%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 24px;
+            color: var(--primary);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .brand-name {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .search-bar {
+            display: flex;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-bar button {
+            background: var(--dark);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-bar button:hover {
+            background: #0a1e3f;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 8px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1610563166150-b34df4f3bcd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        /* Order Tracking Section */
+        .tracking-section {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .tracking-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .tracking-form {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .tracking-form input {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .tracking-form button {
+            padding: 15px 25px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .tracking-form button:hover {
+            background: var(--secondary);
+        }
+
+        /* Order Status */
+        .order-status {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .order-status:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ddd;
+            z-index: 1;
+        }
+
+        .order-status:after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 60%;
+            height: 4px;
+            background: var(--success);
+            z-index: 2;
+        }
+
+        .status-step {
+            text-align: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .status-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            border: 4px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            color: #ddd;
+        }
+
+        .status-step.active .status-icon {
+            border-color: var(--success);
+            background: var(--success);
+            color: white;
+        }
+
+        .status-label {
+            font-weight: 600;
+            color: var(--gray);
+        }
+
+        .status-step.active .status-label {
+            color: var(--success);
+        }
+
+        .status-date {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 5px;
+        }
+
+        /* Order Details */
+        .order-details {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .order-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .info-item {
+            display: flex;
+            margin-bottom: 12px;
+        }
+
+        .info-item .label {
+            font-weight: 600;
+            width: 120px;
+            color: var(--dark);
+        }
+
+        .info-item .value {
+            flex: 1;
+        }
+
+        /* Order Items */
+        .order-items {
+            margin-top: 30px;
+        }
+
+        .items-header {
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr 1fr;
+            padding: 15px 20px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px 8px 0 0;
+            font-weight: 600;
+        }
+
+        .item-row {
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr 1fr;
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+
+        .item-row:last-child {
+            border-bottom: none;
+        }
+
+        .item-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            background-size: cover;
+            background-position: center;
+            margin-right: 15px;
+        }
+
+        .item-details {
+            display: flex;
+            align-items: center;
+        }
+
+        .item-name {
+            font-weight: 600;
+        }
+
+        .item-price {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Categories Section */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .category-content {
+            padding: 20px;
+        }
+
+        .category-content h3 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .category-content p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Products Section */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .product-info .price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .product-info .description {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-cart {
+            flex: 1;
+            background: var(--secondary);
+        }
+
+        .btn-buy {
+            flex: 1;
+            background: var(--accent);
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            padding: 80px 0;
+            margin: 60px 0;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: var(--gray);
+        }
+
+        .about-image {
+            flex: 1;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1610563166150-b34df4f3bcd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80') center/cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                width: 100%;
+            }
+            
+            .items-header, .item-row {
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .search-bar {
+                max-width: 100%;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tracking-form {
+                flex-direction: column;
+            }
+            
+            .order-status {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+            
+            .status-step {
+                flex: 1 0 40%;
+            }
+            
+            .items-header, .item-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-top">
+            <div class="logo-container">
+                <div class="logo">BVR</div>
+                <div class="brand-name">BVR_Vastra_Vibes</div>
+            </div>
+            <div class="nav-icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-user"></i> Login</a>
+                <a href="#">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">3</span>
+                </a>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for sarees...">
+            <button><i class="fas fa-search"></i> Search</button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Fancy Sarees</a></li>
+                <li><a href="#">Cotton Sarees</a></li>
+                <li><a href="#">Synthetic Sarees</a></li>
+                <li><a href="#">Supernet Sarees</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Elegant Sarees for Every Occasion</h1>
+            <p>Discover our exclusive collection of traditional and contemporary sarees that celebrate the beauty of Indian heritage</p>
+            <a href="#" class="btn">Shop Collection</a>
+        </div>
+    </section>
+
+    <!-- Order Tracking Section -->
+    <section class="container">
+        <div class="tracking-section">
+            <div class="tracking-header">
+                <h2 class="section-title">Track Your Order</h2>
+                <a href="#" class="btn btn-secondary">My Orders</a>
+            </div>
+            
+            <div class="tracking-form">
+                <input type="text" id="order-id" placeholder="Enter Order ID (e.g., BVR123456789)">
+                <button id="track-btn"><i class="fas fa-search"></i> Track Order</button>
+            </div>
+            
+            <div id="tracking-result">
+                <!-- Tracking results will appear here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="container">
+        <h2 class="section-title">Saree Categories</h2>
+        <div class="categories">
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('https://images.unsplash.com/photo-1610563166150-b34df4f3bcd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="category-content">
+                    <h3>Fancy Sarees</h3>
+                    <p>Luxurious and ornate sarees perfect for special occasions and celebrations</p>
+                    <a href="#" class="btn">Explore</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="category-content">
+                    <h3>Cotton Sarees</h3>
+                    <p>Comfortable and breathable sarees for everyday wear and casual events</p>
+                    <a href="#" class="btn">Explore</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="category-content">
+                    <h3>Synthetic Sarees</h3>
+                    <p>Modern sarees with synthetic materials offering durability and vibrant colors</p>
+                    <a href="#" class="btn">Explore</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('https://images.unsplash.com/photo-1610563166150-b34df4f3bcd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="category-content">
+                    <h3>Supernet Sarees</h3>
+                    <p>Lightweight and flowy sarees with a contemporary twist on traditional designs</p>
+                    <a href="#" class="btn">Explore</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="container">
+        <h2 class="section-title">Featured Sarees</h2>
+        <div class="products">
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1610563166150-b34df4f3bcd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="product-info">
+                    <h3>Elegant Silk Saree</h3>
+                    <div class="price">₹4,599</div>
+                    <p class="description">Handwoven silk saree with intricate gold zari work, perfect for weddings and festivals.</p>
+                    <div class="product-actions">
+                        <button class="btn btn-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="btn btn-buy"><i class="fas fa-bolt"></i> Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="product-info">
+                    <h3>Cotton Floral Saree</h3>
+                    <div class="price">₹1,899</div>
+                    <p class="description">Lightweight cotton saree with beautiful floral prints, ideal for daily wear.</p>
+                    <div class="product-actions">
+                        <button class="btn btn-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="btn btn-buy"><i class="fas fa-bolt"></i> Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="product-info">
+                    <h3>Designer Georgette Saree</h3>
+                    <div class="price">₹3,299</div>
+                    <p class="description">Stylish georgette saree with embroidered borders and contemporary design.</p>
+                    <div class="product-actions">
+                        <button class="btn btn-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="btn btn-buy"><i class="fas fa-bolt"></i> Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1610563166150-b34df4f3bcd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="product-info">
+                    <h3>Traditional Banarasi Silk</h3>
+                    <div class="price">₹5,999</div>
+                    <p class="description">Authentic Banarasi silk saree with intricate brocade work, a timeless classic.</p>
+                    <div class="product-actions">
+                        <button class="btn btn-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="btn btn-buy"><i class="fas fa-bolt"></i> Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About BVR Vastra Vibes</h2>
+                    <p>BVR Vastra Vibes is a premium saree boutique dedicated to preserving and celebrating the rich heritage of Indian textiles. With over two decades of experience, we curate the finest collection of traditional and contemporary sarees.</p>
+                    <p>Our journey began with a passion for craftsmanship and a vision to make exquisite sarees accessible to women across the globe. We work directly with skilled artisans and weavers to ensure authenticity and quality in every piece we offer.</p>
+                    <p>From elegant silk sarees for weddings to comfortable cotton sarees for daily wear, our collection caters to every taste and occasion. Each saree in our collection tells a story of tradition, artistry, and cultural pride.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BVR Vastra Vibes</h3>
+                    <p>Premium sarees for every occasion. Celebrating Indian heritage through exquisite craftsmanship and timeless designs.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Offers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Fancy Sarees</a></li>
+                        <li><a href="#">Cotton Sarees</a></li>
+                        <li><a href="#">Synthetic Sarees</a></li>
+                        <li><a href="#">Supernet Sarees</a></li>
+                        <li><a href="#">Bridal Collection</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, Mumbai</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope"></i> info@bvrvastravibes.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 10AM - 8PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 BVR Vastra Vibes. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const addToCartButtons = document.querySelectorAll('.btn-cart');
+            const cartCount = document.querySelector('.cart-count');
+            let count = 3;
+            
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    count++;
+                    cartCount.textContent = count;
+                    
+                    // Animation effect
+                    this.innerHTML = '<i class="fas fa-check"></i> Added!';
+                    this.style.backgroundColor = '#27ae60';
+                    
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+                        this.style.backgroundColor = '';
+                    }, 2000);
+                });
+            });
+            
+            // Buy Now buttons
+            const buyNowButtons = document.querySelectorAll('.btn-buy');
+            buyNowButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Proceeding to checkout...');
+                });
+            });
+            
+            // Order Tracking Functionality
+            const trackBtn = document.getElementById('track-btn');
+            const trackingResult = document.getElementById('tracking-result');
+            
+            trackBtn.addEventListener('click', function() {
+                const orderId = document.getElementById('order-id').value.trim();
+                
+                if (!orderId) {
+                    trackingResult.innerHTML = `
+                        <div style="background: #fff3cd; color: #856404; padding: 20px; border-radius: 10px; text-align: center;">
+                            <i class="fas fa-exclamation-circle" style="font-size: 2rem; margin-bottom: 15px;"></i>
+                            <h3>Please enter a valid Order ID</h3>
+                            <p>Order ID should start with "BVR" followed by numbers</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                // Simulate API call delay
+                trackingResult.innerHTML = `
+                    <div style="text-align: center; padding: 30px;">
+                        <i class="fas fa-spinner fa-spin" style="font-size: 3rem; color: var(--primary);"></i>
+                        <p style="margin-top: 20px; font-size: 1.2rem;">Tracking your order...</p>
+                    </div>
+                `;
+                
+                setTimeout(() => {
+                    // Generate tracking information
+                    const orderStatus = generateOrderStatus(orderId);
+                    trackingResult.innerHTML = orderStatus;
+                }, 1500);
+            });
+            
+            function generateOrderStatus(orderId) {
+                // Sample order data
+                const orderData = {
+                    orderId: orderId,
+                    orderDate: "2023-06-15",
+                    expectedDelivery: "2023-06-25",
+                    status: "In Transit",
+                    items: [
+                        {
+                            name: "Elegant Silk Saree",
+                            image: "https://images.unsplash.com/photo-1610563166150-b34df4f3bcd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+                            quantity: 1,
+                            price: 4599
+                        },
+                        {
+                            name: "Designer Georgette Saree",
+                            image: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+                            quantity: 1,
+                            price: 3299
+                        }
+                    ],
+                    shippingAddress: "123 Fashion Street, Mumbai, Maharashtra 400001",
+                    paymentMethod: "Credit Card (**** **** **** 1234)"
+                };
+                
+                // Determine current status (random for demo)
+                const statusSteps = [
+                    { name: "Order Placed", date: "2023-06-15", active: true },
+                    { name: "Processing", date: "2023-06-16", active: true },
+                    { name: "Shipped", date: "2023-06-18", active: true },
+                    { name: "In Transit", date: "2023-06-20", active: true },
+                    { name: "Out for Delivery", date: "2023-06-24", active: false },
+                    { name: "Delivered", date: "2023-06-25", active: false }
+                ];
+                
+                // Calculate progress percentage
+                let progress = 0;
+                for (let i = 0; i < statusSteps.length; i++) {
+                    if (statusSteps[i].active) progress = ((i + 1) / statusSteps.length) * 100;
+                }
+                
+                // Generate status steps HTML
+                let statusStepsHTML = '';
+                statusSteps.forEach(step => {
+                    statusStepsHTML += `
+                        <div class="status-step ${step.active ? 'active' : ''}">
+                            <div class="status-icon">
+                                <i class="fas ${step.active ? 'fa-check' : 'fa-clock'}"></i>
+                            </div>
+                            <div class="status-label">${step.name}</div>
+                            <div class="status-date">${step.date}</div>
+                        </div>
+                    `;
+                });
+                
+                // Generate items HTML
+                let itemsHTML = '';
+                orderData.items.forEach(item => {
+                    itemsHTML += `
+                        <div class="item-row">
+                            <div class="item-details">
+                                <div class="item-image" style="background-image: url('${item.image}')"></div>
+                                <div class="item-name">${item.name}</div>
+                            </div>
+                            <div class="item-quantity">${item.quantity}</div>
+                            <div class="item-price">₹${item.price.toLocaleString()}</div>
+                            <div class="item-total">₹${(item.price * item.quantity).toLocaleString()}</div>
+                        </div>
+                    `;
+                });
+                
+                return `
+                    <div class="order-status" style="width: 100%;">
+                        ${statusStepsHTML}
+                    </div>
+                    
+                    <div class="order-details">
+                        <div class="order-info">
+                            <div class="info-card">
+                                <h3>Order Information</h3>
+                                <div class="info-item">
+                                    <div class="label">Order ID:</div>
+                                    <div class="value">${orderData.orderId}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="label">Order Date:</div>
+                                    <div class="value">${orderData.orderDate}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="label">Expected Delivery:</div>
+                                    <div class="value">${orderData.expectedDelivery}</div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-card">
+                                <h3>Shipping Address</h3>
+                                <div class="info-item">
+                                    <div class="label">Address:</div>
+                                    <div class="value">${orderData.shippingAddress}</div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-card">
+                                <h3>Payment Details</h3>
+                                <div class="info-item">
+                                    <div class="label">Method:</div>
+                                    <div class="value">${orderData.paymentMethod}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="label">Total Amount:</div>
+                                    <div class="value">₹${(orderData.items.reduce((sum, item) => sum + (item.price * item.quantity), 0)).toLocaleString()}</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="order-items">
+                            <div class="items-header">
+                                <div>Product</div>
+                                <div>Quantity</div>
+                                <div>Price</div>
+                                <div>Total</div>
+                            </div>
+                            ${itemsHTML}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Initialize with a sample tracking
+            document.getElementById('order-id').value = 'BVR123456789';
+            trackBtn.click();
+        });
+    </script>
+</body>
+</html>
