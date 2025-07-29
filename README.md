@@ -1,2 +1,1 @@
-#BVR Vastra Vibes
-website for my clothing business
+BVR Vastra Vibes
